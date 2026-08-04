@@ -61,6 +61,11 @@
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
   /* --- Nav --- */
+  .sr-only{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
   .announcement-bar{
     position:fixed; top:0; left:0; right:0; z-index:60;
     height:38px;
@@ -385,7 +390,7 @@
   }
   .specialty .wrap{position:relative; z-index:1;}
   .specialty-text{max-width:640px;}
-  .specialty-text h2{max-width:none; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.55);}
+  .specialty-text h2{color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.55);}
   .specialty-text .eyebrow{color:#fff; text-shadow:0 1px 8px rgba(0,0,0,0.5);}
   .specialty-text p{color:#fff; text-shadow:0 1px 8px rgba(0,0,0,0.55);}
   .specialty-text .about-list li{color:#fff; border-bottom-color:rgba(255,255,255,0.3); text-shadow:0 1px 8px rgba(0,0,0,0.55);}
@@ -407,7 +412,7 @@
     line-height:1.4;
   }
   .about-text .eyebrow{color:var(--clay); margin-bottom:16px;}
-  .about-text h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:24px; max-width:12ch;}
+  .about-text h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:24px; max-width:22ch;}
   .about-text p{font-size:16px; color:var(--stone-dark); margin-bottom:18px; max-width:52ch;}
   .about-list{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:14px;}
   .about-list li{
@@ -475,6 +480,7 @@
   .field select{
     appearance:none;
     -webkit-appearance:none;
+    -moz-appearance:none;
     border-radius:0;
     background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" fill="none" stroke="%2326241f" stroke-width="1.5"/></svg>');
     background-repeat:no-repeat;
@@ -644,10 +650,9 @@
 </head>
 <body>
 
-<div class="announcement-bar">
-  <div class="announcement-track" aria-hidden="false">
-    <span>🚧 Ce site est actuellement en cours de création — merci de votre patience</span>
-    <span>🚧 Ce site est actuellement en cours de création — merci de votre patience</span>
+<div class="announcement-bar" role="status">
+  <span class="sr-only">Ce site est actuellement en cours de création, merci de votre patience.</span>
+  <div class="announcement-track" aria-hidden="true">
     <span>🚧 Ce site est actuellement en cours de création — merci de votre patience</span>
     <span>🚧 Ce site est actuellement en cours de création — merci de votre patience</span>
   </div>
@@ -944,7 +949,7 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" aria-label="Fermer l'aperçu">&times;</button>
-  <img src="" alt="">
+  <img alt="">
   <div class="lightbox-cap"></div>
 </div>
 
