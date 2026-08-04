@@ -457,6 +457,9 @@
     transition:background .3s ease;
   }
   .submit-btn:hover{background:var(--clay);}
+  .submit-btn:disabled{opacity:0.6; cursor:default;}
+  .form-status{font-size:14px; color:var(--sage); margin:0;}
+  .form-status.is-error{color:var(--clay);}
 
   footer{
     background:var(--charcoal);
@@ -795,7 +798,8 @@
           <span>Lambesc, Bouches-du-Rhône, Vaucluse, Var, Alpes-de-Haute-Provence</span>
         </div>
       </div>
-      <form class="reveal" action="mailto:antoninfranco@icloud.com" method="post" enctype="text/plain">
+      <form class="reveal" id="contact-form" action="https://formspree.io/f/xkjwwydd" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis — Site AFS">
         <div class="field">
           <label for="name">Nom</label>
           <input type="text" id="name" name="name" required>
@@ -809,6 +813,7 @@
           <textarea id="message" name="message" placeholder="Type de terrain, surface, type de travaux envisagés..." required></textarea>
         </div>
         <button type="submit" class="submit-btn">Envoyer la demande</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -895,6 +900,34 @@
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    formStatus.textContent = '';
+    formStatus.classList.remove('is-error');
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        contactForm.reset();
+        formStatus.textContent = 'Merci, votre message a bien été envoyé ! Nous revenons vers vous rapidement.';
+      } else {
+        throw new Error('submit failed');
+      }
+    } catch (err) {
+      formStatus.textContent = 'Une erreur est survenue. Vous pouvez aussi nous contacter par téléphone ou email ci-contre.';
+      formStatus.classList.add('is-error');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 </script>
 
 </body>
