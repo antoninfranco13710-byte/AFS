@@ -429,7 +429,7 @@
     display:block; font-size:12px; text-transform:uppercase;
     letter-spacing:0.08em; color:var(--stone-dark); margin-bottom:8px;
   }
-  .field input, .field textarea{
+  .field input, .field textarea, .field select{
     width:100%;
     border:none;
     border-bottom:1px solid var(--stone);
@@ -441,7 +441,16 @@
     outline:none;
     transition:border-color .3s ease;
   }
-  .field input:focus, .field textarea:focus{border-color:var(--charcoal);}
+  .field input:focus, .field textarea:focus, .field select:focus{border-color:var(--charcoal);}
+  .field select{
+    appearance:none;
+    -webkit-appearance:none;
+    border-radius:0;
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" fill="none" stroke="%2326241f" stroke-width="1.5"/></svg>');
+    background-repeat:no-repeat;
+    background-position:right 2px center;
+    padding-right:20px;
+  }
   .field textarea{resize:vertical; min-height:90px;}
   .submit-btn{
     justify-self:start;
@@ -815,6 +824,56 @@
         <div class="field">
           <label for="city">Ville</label>
           <input type="text" id="city" name="city">
+        </div>
+        <div class="field">
+          <label for="project-type">Type de travaux</label>
+          <select id="project-type" name="project_type">
+            <option value="">Sélectionnez un type de travaux</option>
+            <optgroup label="Pierre &amp; structure">
+              <option>Murets</option>
+              <option>Bordures</option>
+              <option>Jardinières maçonnées</option>
+              <option>Création de portails maçonnés</option>
+              <option>Terrasses sur plots</option>
+              <option>Terrasses sur dalle</option>
+              <option>Dallage en pierre naturelle</option>
+              <option>Pavage</option>
+              <option>Béton désactivé</option>
+              <option>Allées piétonnes</option>
+              <option>Allées carrossables</option>
+              <option>Entrées de garage</option>
+              <option>Accès véhicules</option>
+              <option>Cours</option>
+              <option>Aires de stationnement</option>
+              <option>Clôtures rigides</option>
+              <option>Clôtures souples</option>
+              <option>Clôtures en aluminium</option>
+              <option>Clôtures en bois</option>
+              <option>Clôtures occultantes</option>
+              <option>Portails</option>
+              <option>Portillons</option>
+            </optgroup>
+            <optgroup label="Extérieur &amp; végétal">
+              <option>Engazonnement</option>
+              <option>Gazon en rouleau</option>
+              <option>Semis de gazon</option>
+              <option>Plantations</option>
+              <option>Massifs</option>
+              <option>Haies</option>
+              <option>Arbres et arbustes</option>
+              <option>Paillage</option>
+              <option>Enrochement décoratif</option>
+              <option>Graviers décoratifs</option>
+              <option>Éclairage extérieur</option>
+              <option>Pose de bordures</option>
+              <option>Aménagement de jardins</option>
+              <option>Création d'espaces extérieurs</option>
+            </optgroup>
+            <optgroup label="Spécialité">
+              <option>Terrain de pétanque</option>
+            </optgroup>
+            <option>Autre / plusieurs travaux</option>
+          </select>
         </div>
         <div class="field">
           <label for="message">Votre projet</label>
