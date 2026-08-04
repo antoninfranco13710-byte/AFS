@@ -190,31 +190,6 @@
     background:rgba(245,241,231,0.5);
   }
 
-  /* --- Stone course divider (signature element) --- */
-  .course-divider{
-    height:34px;
-    width:100%;
-    background:
-      repeating-linear-gradient(90deg,
-        var(--cream) 0, var(--cream) 118px,
-        rgba(38,36,31,0.16) 118px, rgba(38,36,31,0.16) 120px),
-      var(--cream);
-    position:relative;
-  }
-  .course-divider::before{
-    content:'';
-    position:absolute; left:0; right:0; top:16px;
-    height:1px;
-    background:rgba(38,36,31,0.16);
-  }
-  .course-divider.dark{
-    background:
-      repeating-linear-gradient(90deg,
-        var(--charcoal) 0, var(--charcoal) 84px,
-        rgba(239,233,220,0.14) 84px, rgba(239,233,220,0.14) 86px),
-      var(--charcoal);
-  }
-  .course-divider.dark::before{background:rgba(239,233,220,0.14);}
 
   section{padding:110px 0;}
   .section-head{
@@ -551,8 +526,6 @@
   <div class="scroll-cue">Découvrir</div>
 </section>
 
-<div class="course-divider"></div>
-
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head reveal">
@@ -589,8 +562,6 @@
   </div>
 </section>
 
-<div class="course-divider dark"></div>
-
 <section class="gallery" id="realisations">
   <div class="wrap">
     <div class="section-head reveal">
@@ -609,8 +580,6 @@
     </div>
   </div>
 </section>
-
-<div class="course-divider"></div>
 
 <section class="about" id="about">
   <div class="wrap">
