@@ -257,9 +257,19 @@
   }
   .service-card{
     background:var(--cream);
-    padding:48px 44px;
     position:relative;
+    overflow:hidden;
   }
+  .service-img{
+    height:260px;
+    overflow:hidden;
+  }
+  .service-img img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .service-card:hover .service-img img{transform:scale(1.06);}
+  .service-body{padding:40px 44px 48px;}
   .service-num{
     font-family:'Fraunces', serif;
     font-size:14px;
@@ -475,7 +485,8 @@
     .hero-meta{gap:18px; margin-top:32px;}
     .hero-meta div{padding-left:10px; font-size:13px;}
     .hero-meta strong{font-size:17px;}
-    .service-card{padding:36px 24px;}
+    .service-img{height:200px;}
+    .service-body{padding:32px 24px 40px;}
     .gallery-grid{grid-template-columns:1fr; grid-auto-rows:220px; gap:12px;}
     .g1, .g2, .g3, .g4, .g5{grid-column:1/2; grid-row:auto;}
     .g-item .cap{opacity:1;}
@@ -607,25 +618,35 @@
     </div>
     <div class="service-grid">
       <div class="service-card reveal">
-        <span class="service-num">Pierre &amp; structure</span>
-        <h3>Murs, dallages &amp; terrasses en pierre</h3>
-        <p>Murs de soutènement et murets, dallages en pierre naturelle, terrasses sur plots ou sur dalle : un travail de maçonnerie traditionnelle, taillé pour le climat et les terrains de Provence.</p>
-        <div class="service-tags">
-          <span>Murs de soutènement</span>
-          <span>Dallages pierre</span>
-          <span>Terrasses</span>
-          <span>Piliers &amp; clôtures</span>
+        <div class="service-img">
+          <img src="images/terrasse-pierre.jpg" width="511" height="611" loading="lazy" decoding="async" alt="Terrasse en pierre naturelle posée sur plots">
+        </div>
+        <div class="service-body">
+          <span class="service-num">Pierre &amp; structure</span>
+          <h3>Murs, dallages &amp; terrasses en pierre</h3>
+          <p>Murs de soutènement et murets, dallages en pierre naturelle, terrasses sur plots ou sur dalle : un travail de maçonnerie traditionnelle, taillé pour le climat et les terrains de Provence.</p>
+          <div class="service-tags">
+            <span>Murs de soutènement</span>
+            <span>Dallages pierre</span>
+            <span>Terrasses</span>
+            <span>Piliers &amp; clôtures</span>
+          </div>
         </div>
       </div>
       <div class="service-card reveal">
-        <span class="service-num">Extérieur &amp; végétal</span>
-        <h3>Aménagements paysagers complets</h3>
-        <p>Engazonnement, allées en gravier, plantations, clôtures et portails : la conception et la réalisation de vos extérieurs, du terrassement à la dernière plantation.</p>
-        <div class="service-tags">
-          <span>Engazonnement</span>
-          <span>Allées &amp; gravier</span>
-          <span>Plantations</span>
-          <span>Clôtures &amp; portails</span>
+        <div class="service-img">
+          <img src="images/jardin-engazonnement.jpg" width="832" height="1110" loading="lazy" decoding="async" alt="Jardin engazonné avec cheminement bois et bac de gravier">
+        </div>
+        <div class="service-body">
+          <span class="service-num">Extérieur &amp; végétal</span>
+          <h3>Aménagements paysagers complets</h3>
+          <p>Engazonnement, allées en gravier, plantations, clôtures et portails : la conception et la réalisation de vos extérieurs, du terrassement à la dernière plantation.</p>
+          <div class="service-tags">
+            <span>Engazonnement</span>
+            <span>Allées &amp; gravier</span>
+            <span>Plantations</span>
+            <span>Clôtures &amp; portails</span>
+          </div>
         </div>
       </div>
     </div>
