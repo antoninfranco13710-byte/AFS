@@ -349,14 +349,16 @@
   .specialty-bg::after{
     content:'';
     position:absolute; inset:0;
-    background:rgba(20,19,16,0.6);
+    background:
+      linear-gradient(90deg, rgba(10,10,8,0.82) 0%, rgba(10,10,8,0.6) 45%, rgba(10,10,8,0.3) 100%),
+      rgba(15,14,12,0.55);
   }
   .specialty .wrap{position:relative; z-index:1;}
   .specialty-text{max-width:640px;}
-  .specialty-text h2{max-width:none; color:var(--cream-soft);}
-  .specialty-text .eyebrow{color:#f5ac68;}
-  .specialty-text p{color:rgba(245,241,231,0.85);}
-  .specialty-text .about-list li{color:rgba(245,241,231,0.85); border-bottom-color:rgba(245,241,231,0.2);}
+  .specialty-text h2{max-width:none; color:var(--cream-soft); text-shadow:0 2px 12px rgba(0,0,0,0.55);}
+  .specialty-text .eyebrow{color:#f5ac68; text-shadow:0 1px 8px rgba(0,0,0,0.5);}
+  .specialty-text p{color:#f2efe8; text-shadow:0 1px 8px rgba(0,0,0,0.55);}
+  .specialty-text .about-list li{color:#f2efe8; border-bottom-color:rgba(245,241,231,0.25); text-shadow:0 1px 8px rgba(0,0,0,0.55);}
   .about-grid{
     display:grid;
     grid-template-columns:0.9fr 1.1fr;
