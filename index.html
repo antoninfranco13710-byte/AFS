@@ -336,9 +336,27 @@
   .g5{grid-column:1/4; grid-row:4/6;}
 
   /* --- About --- */
-  .about, .specialty{background:var(--cream-soft);}
+  .about{background:var(--cream-soft);}
+
+  /* --- Specialty (pétanque) --- */
+  .specialty{position:relative; overflow:hidden;}
+  .specialty-bg{
+    position:absolute; inset:0;
+    background-image:url('images/terrain-petanque-eclairage.jpg');
+    background-size:cover;
+    background-position:center;
+  }
+  .specialty-bg::after{
+    content:'';
+    position:absolute; inset:0;
+    background:rgba(20,19,16,0.6);
+  }
+  .specialty .wrap{position:relative; z-index:1;}
   .specialty-text{max-width:640px;}
-  .specialty-text h2{max-width:none;}
+  .specialty-text h2{max-width:none; color:var(--cream-soft);}
+  .specialty-text .eyebrow{color:#f5ac68;}
+  .specialty-text p{color:rgba(245,241,231,0.85);}
+  .specialty-text .about-list li{color:rgba(245,241,231,0.85); border-bottom-color:rgba(245,241,231,0.2);}
   .about-grid{
     display:grid;
     grid-template-columns:0.9fr 1.1fr;
@@ -682,6 +700,7 @@
 </section>
 
 <section class="specialty" id="petanque">
+  <div class="specialty-bg"></div>
   <div class="wrap">
     <div class="about-text reveal specialty-text">
       <span class="eyebrow">Spécialité</span>
