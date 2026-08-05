@@ -446,7 +446,19 @@
     gap:80px;
   }
   .contact-text .eyebrow{color:var(--clay); margin-bottom:16px;}
-  .contact-text h2{font-size:clamp(30px,4vw,44px); margin-bottom:22px; max-width:12ch;}
+  .contact-text h2{font-size:clamp(30px,4vw,44px); margin-bottom:16px; max-width:12ch;}
+  .contact-badge{
+    display:inline-block;
+    background:rgba(164,92,58,0.12);
+    color:var(--clay);
+    border:1px solid rgba(164,92,58,0.35);
+    padding:6px 14px;
+    border-radius:2px;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.02em;
+    margin-bottom:22px;
+  }
   .contact-text p{font-size:16px; color:var(--stone-dark); max-width:44ch; margin-bottom:32px;}
   .contact-detail{margin-bottom:22px;}
   .contact-detail .label{
@@ -700,9 +712,9 @@
         <li><a href="#realisations">Réalisations</a></li>
         <li><a href="#about">L'entreprise</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="nav-cta-mobile"><a href="#contact">Demander un devis</a></li>
+        <li class="nav-cta-mobile"><a href="#contact">Devis gratuit sous 48h</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Demander un devis</a>
+      <a href="#contact" class="nav-cta">Devis gratuit sous 48h</a>
       <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
   </div>
@@ -872,6 +884,7 @@
       <div class="contact-text reveal">
         <span class="eyebrow">Contact</span>
         <h2>Un projet à discuter ?</h2>
+        <span class="contact-badge">⚡ Devis gratuit sous 48h</span>
         <p>Décrivez votre terrain et votre projet : AFS revient vers vous pour convenir d'une visite ou d'un premier échange.</p>
         <div class="contact-detail">
           <div class="label">Email</div>
