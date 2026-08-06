@@ -211,6 +211,20 @@
     font-weight:300;
     color:rgba(245,241,231,0.82);
   }
+  .hero-cta{
+    display:inline-block;
+    margin-top:32px;
+    background:var(--clay);
+    color:var(--cream-soft);
+    text-decoration:none;
+    padding:16px 34px;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-radius:2px;
+    transition:background .3s ease, transform .3s ease;
+  }
+  .hero-cta:hover{background:#c17244; transform:translateY(-2px);}
   .hero-meta{
     display:flex; gap:40px; margin-top:44px;
     flex-wrap:wrap;
@@ -242,16 +256,17 @@
     from{opacity:0; transform:translateY(22px);}
     to{opacity:1; transform:translateY(0);}
   }
-  .hero-eyebrow, .hero h1, .hero-sub, .hero-meta div{
+  .hero-eyebrow, .hero h1, .hero-sub, .hero-cta, .hero-meta div{
     opacity:0;
     animation:heroFadeUp 1.3s cubic-bezier(.16,.8,.3,1) forwards;
   }
   .hero-eyebrow{animation-delay:.15s;}
   .hero h1{animation-delay:.4s;}
   .hero-sub{animation-delay:.65s;}
-  .hero-meta div:nth-child(1){animation-delay:.9s;}
-  .hero-meta div:nth-child(2){animation-delay:1.05s;}
-  .hero-meta div:nth-child(3){animation-delay:1.2s;}
+  .hero-cta{animation-delay:.8s;}
+  .hero-meta div:nth-child(1){animation-delay:1s;}
+  .hero-meta div:nth-child(2){animation-delay:1.15s;}
+  .hero-meta div:nth-child(3){animation-delay:1.3s;}
   .scroll-cue{
     position:absolute; right:32px; bottom:36px; z-index:3;
     color:rgba(245,241,231,0.7);
@@ -621,7 +636,7 @@
     html{scroll-behavior:auto;}
     .g-item img, .nav-links a::after, header{transition:none;}
     .reveal{opacity:1; transform:none; transition:none;}
-    .hero-eyebrow, .hero h1, .hero-sub, .hero-meta div{opacity:1; animation:none; transform:none;}
+    .hero-eyebrow, .hero h1, .hero-sub, .hero-cta, .hero-meta div{opacity:1; animation:none; transform:none;}
   }
 
   /* --- Mobile nav CTA (hidden on desktop) --- */
@@ -727,6 +742,7 @@
       <span class="eyebrow hero-eyebrow">Aménagement extérieur</span>
       <h1>Des extérieurs qui prennent de la valeur.</h1>
       <p class="hero-sub">AFS façonne murs, terrasses et jardins en Provence : un travail de maçon-paysagiste où chaque pierre, chaque dallage, chaque niveau est pensé pour durer.</p>
+      <a href="#contact" class="hero-cta">Devis gratuit sous 48h</a>
       <div class="hero-meta">
         <div><strong>Situé à Lambesc</strong>En plein cœur de la Provence</div>
         <div><strong>Zone d'intervention</strong>Région PACA</div>
@@ -826,6 +842,7 @@
         <li>Éclairage d'ambiance pour mettre en valeur votre terrain de pétanque dans le jardin</li>
       </ul>
       <p>Contactez AFS dès aujourd'hui pour obtenir un devis personnalisé ou une étude de projet et donner vie à votre terrain de pétanque sur mesure.</p>
+      <a href="#contact" class="hero-cta">Devis gratuit sous 48h</a>
     </div>
   </div>
 </section>
