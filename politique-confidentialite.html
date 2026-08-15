@@ -78,6 +78,36 @@
   .skip-link:focus{top:16px;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
+  .sr-only{
+    position:absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  .promo-bar{
+    background:var(--clay);
+    color:var(--cream-soft);
+    overflow:hidden;
+    height:38px;
+    display:flex;
+    align-items:center;
+  }
+  .promo-track{
+    display:flex;
+    white-space:nowrap;
+    animation:promoScroll 16s linear infinite;
+  }
+  .promo-track span{
+    padding:0 32px;
+    font-size:13px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  @keyframes promoScroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
   header{
     padding:22px 0;
     border-bottom:1px solid var(--line);
@@ -145,7 +175,11 @@
   .footer-links a{color:rgba(233,239,248,0.65); text-decoration:none; font-size:13px;}
   .footer-links a:hover{color:var(--cream-soft); text-decoration:underline;}
 
-  @media (max-width: 600px){
+    @media (prefers-reduced-motion: reduce){
+    .promo-track{animation:none;}
+  }
+
+@media (max-width: 600px){
     .wrap{padding:0 20px;}
     main{padding:48px 0 64px;}
     .legal table, .legal thead, .legal tbody, .legal th, .legal td, .legal tr{display:block;}
@@ -157,6 +191,14 @@
 <body>
 
 <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+<div class="promo-bar" role="note">
+  <span class="sr-only">Profitez de -20% sur votre devis avec le code ANDRY</span>
+  <div class="promo-track" aria-hidden="true">
+    <span>Profitez de -20% sur votre devis avec le code ANDRY</span>
+    <span>Profitez de -20% sur votre devis avec le code ANDRY</span>
+  </div>
+</div>
 
 <header>
   <div class="wrap">
