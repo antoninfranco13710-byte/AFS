@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — AFS</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#1d2f4d">
+<link rel="icon" href="images/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/work-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{
+    font-family:'Fraunces';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/fraunces-variable.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Work Sans';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/work-sans-variable.woff2') format('woff2');
+  }
+  :root{
+    --cream:#f4f7fb;
+    --cream-soft:#e9eff8;
+    --charcoal:#1d2f4d;
+    --stone:#9db0c9;
+    --stone-dark:#4a5b74;
+    --clay:#3a63a8;
+    --line: rgba(29,47,77,0.14);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:var(--clay);}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  .skip-link{
+    position:absolute;
+    top:-100px; left:16px;
+    z-index:200;
+    background:var(--charcoal); color:var(--cream-soft);
+    padding:12px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:14px;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{top:16px;}
+
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; align-items:center;}
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--charcoal);
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+  }
+  .logo-img{height:40px; width:auto; display:block;}
+
+  main{
+    padding:110px 0;
+    text-align:center;
+  }
+  .not-found{max-width:520px; margin:0 auto;}
+  .not-found .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:13px;
+    color:var(--clay);
+    display:block;
+    margin-bottom:18px;
+  }
+  .not-found .code{
+    font-size:clamp(60px, 10vw, 96px);
+    color:var(--stone);
+    margin-bottom:8px;
+  }
+  .not-found h1{font-size:clamp(26px, 3.4vw, 34px); margin-bottom:16px;}
+  .not-found p{font-size:16px; color:var(--stone-dark); margin:0 0 32px;}
+  .home-btn{
+    display:inline-block;
+    background:var(--clay);
+    color:var(--cream-soft);
+    text-decoration:none;
+    padding:16px 34px;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-radius:2px;
+    transition:background .3s ease, transform .3s ease;
+  }
+  .home-btn:hover{background:#2f4d85; transform:translateY(-2px);}
+
+  footer{
+    background:var(--charcoal);
+    color:rgba(233,239,248,0.75);
+    padding:40px 0;
+    font-size:13px;
+    text-align:center;
+  }
+
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    main{padding:72px 0;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu</a>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo"><picture><source srcset="images/logo-afs.webp" type="image/webp"><img class="logo-img" src="images/logo-afs.png" width="905" height="592" alt="AFS — Nous sommes là pour vous"></picture></a>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="wrap">
+    <div class="not-found">
+      <span class="eyebrow">Erreur</span>
+      <div class="code serif">404</div>
+      <h1>Cette page n'existe pas.</h1>
+      <p>Le lien que vous avez suivi est peut-être incorrect, ou la page a été déplacée. Retournez à l'accueil pour retrouver nos réalisations et nous contacter.</p>
+      <a href="index.html" class="home-btn">Retour à l'accueil</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>AFS — Maçonnerie paysagère, Lambesc, PACA</span>
+  </div>
+</footer>
+
+</body>
+</html>
