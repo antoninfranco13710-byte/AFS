@@ -19,10 +19,23 @@
 <meta name="theme-color" content="#1d2f4d">
 <link rel="icon" href="images/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/work-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{
+    font-family:'Fraunces';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/fraunces-variable.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Work Sans';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/work-sans-variable.woff2') format('woff2');
+  }
   :root{
     --cream:#f4f7fb;
     --cream-soft:#e9eff8;
@@ -169,7 +182,7 @@
           <tr><td>Message / description du projet</td><td>Oui</td></tr>
         </tbody>
       </table>
-      <p>Aucun cookie de mesure d'audience ou de traçage publicitaire n'est déposé par ce site. Le site charge des polices de caractères (Google Fonts) directement depuis les serveurs de Google, ce qui peut entraîner la transmission de votre adresse IP à Google lors du chargement de la page — voir la section 6 « Services tiers ».</p>
+      <p>Aucun cookie de mesure d'audience ou de traçage publicitaire n'est déposé par ce site. Les polices de caractères du site sont hébergées directement sur nos serveurs (aucune connexion à un serveur de police tiers).</p>
 
       <h2>3. Finalité du traitement</h2>
       <p>Les données transmises via le formulaire de contact sont utilisées exclusivement pour répondre à votre demande de devis ou d'information, et pour vous recontacter dans le cadre du suivi de votre projet.</p>
@@ -184,7 +197,6 @@
       <h2>6. Services tiers</h2>
       <p>Ce site fait appel aux services tiers suivants :</p>
       <ul>
-        <li><strong>Google Fonts</strong> (Google Ireland Limited) : chargement des polices de caractères utilisées sur le site, entraînant une connexion aux serveurs de Google.</li>
         <li><strong>Formspree</strong> (Formspree, Inc.) : traitement technique de l'envoi du formulaire de contact.</li>
         <li><strong>API Adresse</strong> (Base Adresse Nationale, service public français data.gouv.fr) : suggestion du code postal lorsque vous saisissez une ville dans le formulaire de contact. Seul le texte que vous tapez dans le champ « Ville » est transmis à ce service, sans autre donnée personnelle.</li>
         <li><strong>GitHub Pages</strong> (GitHub, Inc.) : hébergement du site.</li>

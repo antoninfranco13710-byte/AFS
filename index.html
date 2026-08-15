@@ -36,10 +36,23 @@
 <meta name="twitter:description" content="AFS, maçonnerie paysagère à Lambesc. Murs, dallages, terrasses en pierre et aménagements paysagers dans les Bouches-du-Rhône, le Vaucluse, le Var et les Alpes-de-Haute-Provence.">
 <meta name="twitter:image" content="https://afsamenagementexterieur.fr/images/jardin-engazonnement.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/work-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{
+    font-family:'Fraunces';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/fraunces-variable.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Work Sans';
+    font-style:normal;
+    font-weight:300 600;
+    font-display:swap;
+    src:url('fonts/work-sans-variable.woff2') format('woff2');
+  }
   :root{
     --cream:#f4f7fb;
     --cream-soft:#e9eff8;
@@ -911,11 +924,11 @@
     </div>
     <p class="gallery-scroll-hint">Faites glisser pour tout voir →</p>
     <div class="gallery-grid">
-      <div class="g-item reveal"><picture><source srcset="images/jardin-engazonnement.webp" type="image/webp"><img src="images/jardin-engazonnement.jpg" width="832" height="1110" loading="lazy" decoding="async" alt="Jardin engazonné avec bac de gravier et cheminement bois"></picture><div class="cap">Engazonnement &amp; cheminement</div></div>
-      <div class="g-item reveal"><picture><source srcset="images/terrasse-pierre.webp" type="image/webp"><img src="images/terrasse-pierre.jpg" width="511" height="611" loading="lazy" decoding="async" alt="Terrasse en pierre posée sur plots"></picture><div class="cap">Terrasse sur plots</div></div>
-      <div class="g-item reveal"><picture><source srcset="images/piliers-portail.webp" type="image/webp"><img src="images/piliers-portail.jpg" width="1062" height="1400" loading="lazy" decoding="async" alt="Portail aluminium et piliers enduits"></picture><div class="cap">Piliers &amp; portail</div></div>
-      <div class="g-item reveal"><picture><source srcset="images/allee-bordures.webp" type="image/webp"><img src="images/allee-bordures.jpg" width="511" height="611" loading="lazy" decoding="async" alt="Allée en gravier et pelouse bordée de bordures"></picture><div class="cap">Allée &amp; bordures</div></div>
-      <div class="g-item reveal"><picture><source srcset="images/terrain-petanque.webp" type="image/webp"><img src="images/terrain-petanque.jpg" width="784" height="1400" loading="lazy" decoding="async" alt="Terrain de pétanque bordé d'oliviers"></picture><div class="cap">Terrain de pétanque</div></div>
+      <div class="g-item reveal"><picture><source srcset="images/jardin-engazonnement-thumb.webp" type="image/webp"><img src="images/jardin-engazonnement-thumb.jpg" data-full="images/jardin-engazonnement" width="480" height="640" loading="lazy" decoding="async" alt="Jardin engazonné avec bac de gravier et cheminement bois"></picture><div class="cap">Engazonnement &amp; cheminement</div></div>
+      <div class="g-item reveal"><picture><source srcset="images/terrasse-pierre-thumb.webp" type="image/webp"><img src="images/terrasse-pierre-thumb.jpg" data-full="images/terrasse-pierre" width="480" height="574" loading="lazy" decoding="async" alt="Terrasse en pierre posée sur plots"></picture><div class="cap">Terrasse sur plots</div></div>
+      <div class="g-item reveal"><picture><source srcset="images/piliers-portail-thumb.webp" type="image/webp"><img src="images/piliers-portail-thumb.jpg" data-full="images/piliers-portail" width="480" height="633" loading="lazy" decoding="async" alt="Portail aluminium et piliers enduits"></picture><div class="cap">Piliers &amp; portail</div></div>
+      <div class="g-item reveal"><picture><source srcset="images/allee-bordures-thumb.webp" type="image/webp"><img src="images/allee-bordures-thumb.jpg" data-full="images/allee-bordures" width="480" height="574" loading="lazy" decoding="async" alt="Allée en gravier et pelouse bordée de bordures"></picture><div class="cap">Allée &amp; bordures</div></div>
+      <div class="g-item reveal"><picture><source srcset="images/terrain-petanque-thumb.webp" type="image/webp"><img src="images/terrain-petanque-thumb.jpg" data-full="images/terrain-petanque" width="480" height="857" loading="lazy" decoding="async" alt="Terrain de pétanque bordé d'oliviers"></picture><div class="cap">Terrain de pétanque</div></div>
     </div>
     <div class="gallery-zone">
       <h3 class="reveal">Chantiers réalisés dans les Bouches-du-Rhône, le Vaucluse, le Var et les Alpes-de-Haute-Provence.</h3>
@@ -1138,7 +1151,8 @@
     item.addEventListener('click', () => {
       const img = item.querySelector('img');
       const cap = item.querySelector('.cap');
-      lightboxImg.src = img.currentSrc || img.src;
+      const usesWebp = (img.currentSrc || img.src).endsWith('.webp');
+      lightboxImg.src = img.dataset.full ? img.dataset.full + (usesWebp ? '.webp' : '.jpg') : (img.currentSrc || img.src);
       lightboxImg.alt = img.alt;
       lightboxCap.textContent = cap ? cap.textContent : '';
       lightbox.classList.add('open');
