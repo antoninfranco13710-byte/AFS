@@ -407,20 +407,17 @@
   .specialty-text p{color:#fff; text-shadow:0 1px 8px rgba(0,0,0,0.55);}
   .specialty-text .about-list li{color:#fff; border-bottom-color:rgba(255,255,255,0.3); text-shadow:0 1px 8px rgba(0,0,0,0.55);}
   .about-grid{
-    display:grid;
-    grid-template-columns:0.9fr 1.1fr;
-    gap:80px;
-    align-items:start;
+    display:block;
   }
-  .about-figure{position:sticky; top:120px;}
-  .about-figure img{border-radius:2px;}
-  .about-figure .tag{
-    position:absolute; bottom:-24px; left:-24px;
-    background:var(--charcoal); color:var(--cream-soft);
-    padding:18px 24px;
+  .about-quote{
     font-family:'Fraunces', serif;
-    font-size:15px;
-    max-width:220px;
+    font-size:22px;
+    font-weight:500;
+    color:var(--charcoal);
+    border-left:3px solid var(--clay);
+    padding:2px 0 2px 22px;
+    margin:8px 0 28px;
+    max-width:36ch;
     line-height:1.4;
   }
   .about-text .eyebrow{color:var(--clay); margin-bottom:16px;}
@@ -595,9 +592,7 @@
     .nav-cta{display:none;}
     .burger{display:flex;}
     .service-grid{grid-template-columns:1fr;}
-    .about-grid, .contact-grid{grid-template-columns:1fr; gap:48px;}
-    .about-figure{position:static;}
-    .about-figure .tag{position:static; margin-top:16px; max-width:none;}
+    .contact-grid{grid-template-columns:1fr; gap:48px;}
     .g-item{width:200px; height:190px;}
     .gallery-scroll-hint{margin-top:-32px;}
     section{padding:70px 0;}
@@ -616,7 +611,7 @@
     .service-body{padding:32px 24px 40px;}
     .g-item{width:170px; height:170px;}
     .g-item .cap{opacity:1;}
-    .about-figure .tag{left:0; padding:16px 18px; font-size:14px;}
+    .about-quote{font-size:19px; padding-left:18px;}
     .zone h3{font-size:19px;}
     .contact-detail a, .contact-detail span{font-size:19px;}
   }
@@ -854,13 +849,10 @@
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-figure reveal">
-        <img src="images/allee-bordures.jpg" width="511" height="611" loading="lazy" decoding="async" alt="Jardin aménagé par AFS, allée en gravier et bordures paysagères à Lambesc">
-        <div class="tag">Chaque chantier est pensé pour le terrain, jamais l'inverse.</div>
-      </div>
       <div class="about-text reveal">
         <span class="eyebrow">L'entreprise</span>
         <h2>AFS – Entreprise d'aménagement extérieur et paysagiste entre Salon-de-Provence, Aix-en-Provence et le Luberon</h2>
+        <p class="about-quote">Chaque chantier est pensé pour le terrain, jamais l'inverse.</p>
         <p>AFS est une entreprise spécialisée dans l'aménagement extérieur, la maçonnerie paysagère et la création d'espaces extérieurs sur mesure pour les particuliers et les professionnels.</p>
         <p>Basée au cœur d'un secteur situé entre le Pays Salonais, le Pays d'Aix et le Luberon, notre entreprise accompagne vos projets d'aménagement de jardin et d'extérieur : création de terrasses, dallages, terrasses sur plots, terrasses en pierre ou matériaux modernes, clôtures, murets, terrains de pétanque, aménagements paysagers et travaux de rénovation extérieure.</p>
         <p>Nous transformons vos extérieurs en espaces élégants, fonctionnels et durables, adaptés à votre habitation, votre terrain et votre mode de vie. Chaque projet est réalisé avec soin, depuis l'étude de vos besoins jusqu'aux finitions, en privilégiant la qualité des matériaux et un travail précis.</p>
