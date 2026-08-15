@@ -84,6 +84,18 @@
   }
   a{color:inherit;}
   img{max-width:100%;display:block;}
+  .skip-link{
+    position:absolute;
+    top:-100px; left:16px;
+    z-index:200;
+    background:var(--charcoal); color:var(--cream-soft);
+    padding:12px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:14px;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{top:16px;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
 
   /* --- Nav --- */
@@ -779,6 +791,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Aller au contenu</a>
+
 <header id="site-header">
   <div class="wrap">
     <nav>
@@ -796,6 +810,7 @@
   </div>
 </header>
 
+<main id="main-content">
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -1101,6 +1116,7 @@
     <a href="#contact" class="cta-banner-btn reveal">Demander mon devis gratuit</a>
   </div>
 </div>
+</main>
 
 <footer>
   <div class="wrap">
