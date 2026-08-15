@@ -424,6 +424,20 @@
   .about-text .eyebrow{color:var(--clay); margin-bottom:16px;}
   .about-text h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:24px; max-width:22ch;}
   .about-text p{font-size:16px; color:var(--stone-dark); margin-bottom:18px; max-width:52ch;}
+  .about-more{max-height:0; overflow:hidden; transition:max-height .5s ease;}
+  .about-toggle{
+    display:inline-flex; align-items:center; gap:8px;
+    background:none; border:none; cursor:pointer; padding:0;
+    font-family:'Work Sans', sans-serif; font-weight:500;
+    font-size:13px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--clay);
+    border-bottom:1px solid rgba(164,92,58,0.4);
+    padding-bottom:2px;
+    transition:border-color .3s ease;
+  }
+  .about-toggle:hover{border-bottom-color:var(--clay);}
+  .about-toggle-arrow{display:inline-block; transition:transform .3s ease;}
+  .about-toggle.expanded .about-toggle-arrow{transform:rotate(180deg);}
   .about-list{list-style:none; padding:0; margin:28px 0 0; display:grid; gap:14px;}
   .about-list li{
     display:flex; align-items:baseline; gap:14px;
@@ -858,12 +872,18 @@
         <h2>AFS – Entreprise d'aménagement extérieur et paysagiste entre Salon-de-Provence, Aix-en-Provence et le Luberon</h2>
         <p class="about-quote">Chaque chantier est pensé pour le terrain, jamais l'inverse.</p>
         <p>AFS est une entreprise spécialisée dans l'aménagement extérieur, la maçonnerie paysagère et la création d'espaces extérieurs sur mesure pour les particuliers et les professionnels.</p>
-        <p>Basée au cœur d'un secteur situé entre le Pays Salonais, le Pays d'Aix et le Luberon, notre entreprise accompagne vos projets d'aménagement de jardin et d'extérieur : création de terrasses, dallages, terrasses sur plots, terrasses en pierre ou matériaux modernes, clôtures, murets, terrains de pétanque, aménagements paysagers et travaux de rénovation extérieure.</p>
-        <p>Nous transformons vos extérieurs en espaces élégants, fonctionnels et durables, adaptés à votre habitation, votre terrain et votre mode de vie. Chaque projet est réalisé avec soin, depuis l'étude de vos besoins jusqu'aux finitions, en privilégiant la qualité des matériaux et un travail précis.</p>
-        <p>AFS met son expertise au service de vos aménagements extérieurs avec une attention particulière portée aux détails et à l'intégration paysagère. Nous proposons également des solutions d'éclairage d'ambiance extérieur afin de sublimer vos terrasses, jardins et terrains de pétanque et profiter pleinement de vos espaces en soirée.</p>
-        <p>Que vous souhaitiez créer une terrasse, aménager un jardin, installer une clôture, construire un terrain de pétanque ou valoriser votre propriété grâce à des travaux extérieurs, AFS vous accompagne avec des réalisations personnalisées et durables.</p>
-        <p>Nous intervenons dans le Pays Salonais, le Pays d'Aix, le Luberon et les communes environnantes pour tous vos projets d'aménagement extérieur, de paysagisme et de maçonnerie paysagère.</p>
-        <p>AFS : votre spécialiste de l'aménagement extérieur pour des espaces harmonieux, durables et valorisant votre habitat.</p>
+        <div class="about-more" id="about-more">
+          <p>Basée au cœur d'un secteur situé entre le Pays Salonais, le Pays d'Aix et le Luberon, notre entreprise accompagne vos projets d'aménagement de jardin et d'extérieur : création de terrasses, dallages, terrasses sur plots, terrasses en pierre ou matériaux modernes, clôtures, murets, terrains de pétanque, aménagements paysagers et travaux de rénovation extérieure.</p>
+          <p>Nous transformons vos extérieurs en espaces élégants, fonctionnels et durables, adaptés à votre habitation, votre terrain et votre mode de vie. Chaque projet est réalisé avec soin, depuis l'étude de vos besoins jusqu'aux finitions, en privilégiant la qualité des matériaux et un travail précis.</p>
+          <p>AFS met son expertise au service de vos aménagements extérieurs avec une attention particulière portée aux détails et à l'intégration paysagère. Nous proposons également des solutions d'éclairage d'ambiance extérieur afin de sublimer vos terrasses, jardins et terrains de pétanque et profiter pleinement de vos espaces en soirée.</p>
+          <p>Que vous souhaitiez créer une terrasse, aménager un jardin, installer une clôture, construire un terrain de pétanque ou valoriser votre propriété grâce à des travaux extérieurs, AFS vous accompagne avec des réalisations personnalisées et durables.</p>
+          <p>Nous intervenons dans le Pays Salonais, le Pays d'Aix, le Luberon et les communes environnantes pour tous vos projets d'aménagement extérieur, de paysagisme et de maçonnerie paysagère.</p>
+          <p>AFS : votre spécialiste de l'aménagement extérieur pour des espaces harmonieux, durables et valorisant votre habitat.</p>
+        </div>
+        <button type="button" class="about-toggle" id="about-toggle" aria-expanded="false" aria-controls="about-more">
+          <span class="about-toggle-label">Lire la suite</span>
+          <span class="about-toggle-arrow" aria-hidden="true">↓</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1066,6 +1086,19 @@
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  const aboutMore = document.getElementById('about-more');
+  const aboutToggle = document.getElementById('about-toggle');
+  if (aboutMore && aboutToggle) {
+    const aboutToggleLabel = aboutToggle.querySelector('.about-toggle-label');
+    aboutToggle.addEventListener('click', () => {
+      const isOpen = aboutMore.classList.toggle('expanded');
+      aboutMore.style.maxHeight = isOpen ? aboutMore.scrollHeight + 'px' : '0px';
+      aboutToggle.classList.toggle('expanded', isOpen);
+      aboutToggle.setAttribute('aria-expanded', String(isOpen));
+      aboutToggleLabel.textContent = isOpen ? 'Réduire' : 'Lire la suite';
+    });
+  }
 
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
