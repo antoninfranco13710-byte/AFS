@@ -265,6 +265,31 @@
 
 
   section{padding:110px 0;}
+
+  /* --- Trust / Pourquoi AFS --- */
+  .trust{background:var(--cream-soft); padding:70px 0;}
+  .trust-eyebrow{text-align:center; margin-bottom:36px;}
+  .trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:48px;
+  }
+  .trust-item{border-left:1px solid var(--line); padding-left:28px;}
+  .trust-item:first-child{border-left:none; padding-left:0;}
+  .trust-num{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:14px;
+    color:var(--clay);
+    letter-spacing:0.08em;
+    margin-bottom:14px;
+  }
+  .trust-item h3{font-size:19px; margin-bottom:10px; color:var(--charcoal);}
+  .trust-item p{font-size:14.5px; color:var(--stone-dark); line-height:1.6;}
+  .trust-grid .trust-item:nth-child(2){transition-delay:.08s;}
+  .trust-grid .trust-item:nth-child(3){transition-delay:.16s;}
+  .trust-grid .trust-item:nth-child(4){transition-delay:.24s;}
+
   .section-head{
     display:flex;
     justify-content:space-between;
@@ -611,6 +636,9 @@
     .gallery-scroll-hint{margin-top:-32px;}
     section{padding:70px 0;}
     .gallery-zone{flex-direction:column; align-items:flex-start;}
+    .trust{padding:52px 0;}
+    .trust-grid{grid-template-columns:1fr 1fr; gap:32px 28px;}
+    .trust-item:nth-child(3){border-left:none; padding-left:0;}
   }
 
   @media (max-width: 480px){
@@ -628,6 +656,8 @@
     .about-quote{font-size:19px; padding-left:18px;}
     .gallery-zone h3{font-size:19px;}
     .contact-detail a, .contact-detail span{font-size:19px;}
+    .trust-grid{grid-template-columns:1fr; gap:28px;}
+    .trust-item, .trust-item:nth-child(3){border-left:none; padding-left:0;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -744,6 +774,34 @@
     </div>
   </div>
   <div class="scroll-cue">Découvrir</div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <span class="eyebrow trust-eyebrow reveal">Pourquoi AFS</span>
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <span class="trust-num">01</span>
+        <h3>13 ans d'expérience</h3>
+        <p>Un savoir-faire éprouvé en maçonnerie paysagère et aménagement extérieur, au service de vos projets.</p>
+      </div>
+      <div class="trust-item reveal">
+        <span class="trust-num">02</span>
+        <h3>Devis gratuit sous 48h</h3>
+        <p>Une réponse rapide et sans engagement pour démarrer votre projet en toute sérénité.</p>
+      </div>
+      <div class="trust-item reveal">
+        <span class="trust-num">03</span>
+        <h3>Accompagnement sur mesure</h3>
+        <p>De l'étude du terrain aux finitions, chaque chantier est pensé pour votre espace, jamais l'inverse.</p>
+      </div>
+      <div class="trust-item reveal">
+        <span class="trust-num">04</span>
+        <h3>Ancrés en Provence</h3>
+        <p>Une entreprise locale, basée à Lambesc, qui connaît parfaitement le terrain et le climat de la région.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="services" id="services">
