@@ -13,8 +13,8 @@
 <meta name="google-site-verification" content="1V3NURMjy-H4WPT0e-zlyfuaChFIpbNUIgsEPzpvjXUM">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AFS — Paysagiste & Maçonnerie paysagère à Lambesc, Aix-en-Provence</title>
-<meta name="description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence, Salon-de-Provence et dans toute la région PACA.">
+<title>AFS — Paysagiste & Maçonnerie paysagère à Lambesc</title>
+<meta name="description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence et dans toute la région PACA.">
 <link rel="canonical" href="https://afsamenagementexterieur.fr/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1d2f4d">
@@ -24,16 +24,16 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="AFS — Aménagement extérieur">
-<meta property="og:title" content="AFS — Paysagiste & Maçonnerie paysagère à Lambesc, Aix-en-Provence">
-<meta property="og:description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence, Salon-de-Provence et dans toute la région PACA.">
+<meta property="og:title" content="AFS — Paysagiste & Maçonnerie paysagère à Lambesc">
+<meta property="og:description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence et dans toute la région PACA.">
 <meta property="og:url" content="https://afsamenagementexterieur.fr/">
 <meta property="og:image" content="https://afsamenagementexterieur.fr/images/jardin-engazonnement.jpg">
 <meta property="og:image:width" content="832">
 <meta property="og:image:height" content="1110">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AFS — Paysagiste & Maçonnerie paysagère à Lambesc, Aix-en-Provence">
-<meta name="twitter:description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence, Salon-de-Provence et dans toute la région PACA.">
+<meta name="twitter:title" content="AFS — Paysagiste & Maçonnerie paysagère à Lambesc">
+<meta name="twitter:description" content="AFS, paysagiste et maçon paysager à Lambesc. Terrasses, murs en pierre, aménagements extérieurs à Aix-en-Provence et dans toute la région PACA.">
 <meta name="twitter:image" content="https://afsamenagementexterieur.fr/images/jardin-engazonnement.jpg">
 
 <link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -435,6 +435,13 @@
   }
   .g-item:hover .cap{opacity:1;}
 
+  /* --- Avis clients --- */
+  .reviews{background:var(--cream); text-align:center;}
+  .reviews-inner{max-width:640px; margin:0 auto;}
+  .reviews-inner .eyebrow{display:block; margin-bottom:16px;}
+  .reviews-inner h2{font-size:clamp(26px, 3.2vw, 36px); margin-bottom:18px;}
+  .reviews-inner p{font-size:16px; color:var(--stone-dark); margin-bottom:30px;}
+
   /* --- About --- */
   .about{background:var(--cream-soft);}
 
@@ -587,6 +594,9 @@
     text-decoration:none;
     color:var(--charcoal);
   }
+  .contact-map{margin-top:56px;}
+  .contact-map iframe{width:100%; height:320px; border:0; display:block; border-radius:2px;}
+
   form{display:grid; gap:20px;}
   .hp-field{
     position:absolute;
@@ -681,9 +691,12 @@
   }
   footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 24px;}
   footer .logo{color:rgba(233,239,248,0.85); font-size:17px;}
-  .footer-links{display:flex; gap:20px; flex-wrap:wrap;}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap; align-items:center;}
   .footer-links a{color:rgba(233,239,248,0.65); text-decoration:none; font-size:13px;}
   .footer-links a:hover{color:var(--cream-soft); text-decoration:underline;}
+  .social-link{display:inline-flex; color:rgba(233,239,248,0.65); transition:color .3s ease;}
+  .social-link:hover{color:var(--cream-soft);}
+  .social-link svg{width:19px; height:19px;}
 
   @media (max-width: 860px){
     .wrap{padding:0 24px;}
@@ -833,7 +846,17 @@
     {"@type": "AdministrativeArea", "name": "Var"},
     {"@type": "AdministrativeArea", "name": "Alpes-de-Haute-Provence"}
   ],
-  "priceRange": "€€"
+  "priceRange": "€€",
+  "sameAs": [
+    "https://www.instagram.com/ets_afs/",
+    "https://maps.google.com/?cid=15977401759749575139"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:30",
+    "closes": "19:00"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -1079,6 +1102,17 @@
   </div>
 </section>
 
+<section class="reviews">
+  <div class="wrap reveal">
+    <div class="reviews-inner">
+      <span class="eyebrow">Avis clients</span>
+      <h2>Ce que nos clients pensent de nos réalisations</h2>
+      <p>Retrouvez les avis de nos clients sur notre fiche Google, et partagez le vôtre après votre projet avec AFS.</p>
+      <a href="https://maps.google.com/?cid=15977401759749575139" target="_blank" rel="noopener" class="hero-cta">Voir nos avis sur Google →</a>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
@@ -1112,6 +1146,7 @@
         <h2>Un projet à discuter ?</h2>
         <span class="contact-badge">⚡ Devis gratuit sous 48h</span>
         <p>Décrivez votre terrain et votre projet : AFS revient vers vous pour convenir d'une visite ou d'un premier échange.</p>
+        <p>Le tarif est toujours établi sur devis, selon la surface, le terrain et les matériaux choisis.</p>
         <div class="contact-detail">
           <div class="label">Email</div>
           <a href="mailto:antoninfranco@icloud.com">antoninfranco@icloud.com</a>
@@ -1127,6 +1162,10 @@
         <div class="contact-detail">
           <div class="label">Zone d'intervention</div>
           <span>Lambesc, Bouches-du-Rhône, Vaucluse, Var, Alpes-de-Haute-Provence</span>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Avis &amp; fiche Google</div>
+          <a href="https://maps.google.com/?cid=15977401759749575139" target="_blank" rel="noopener">Voir notre fiche Google →</a>
         </div>
       </div>
       <form class="reveal" id="contact-form" action="https://formspree.io/f/xkjwwydd" method="POST">
@@ -1211,6 +1250,9 @@
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
+    <div class="contact-map reveal">
+      <iframe src="https://www.google.com/maps?q=9+B+chemin+des+Beattes,+13410+Lambesc&output=embed" width="100%" height="320" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation AFS — 9 B chemin des Beattes, 13410 Lambesc"></iframe>
+    </div>
   </div>
 </section>
 
@@ -1268,6 +1310,9 @@
     <nav class="footer-links">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="https://www.instagram.com/ets_afs/" target="_blank" rel="noopener" class="social-link" aria-label="AFS sur Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+      </a>
     </nav>
   </div>
 </footer>
