@@ -1461,6 +1461,7 @@
       });
       if (response.ok) {
         contactForm.reset();
+        gtag('event', 'conversion', {'send_to': 'AW-18228343756/COMXCOS54_YcEMzn-fND', 'value': 1.0, 'currency': 'EUR'});
         formStatus.textContent = 'Merci, votre message a bien été envoyé ! Nous revenons vers vous rapidement.';
       } else {
         throw new Error('submit failed');
